@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A premium tribute page dedicated to Nikola Tesla, the master of lightning who invented the twentieth century. Built with HTML5, CSS3, and scroll-activated animations.">
+    <title>Nikola Tesla - The Visionary of Electricity</title>
+    <!-- Google Fonts: Playfair Display (Serif header) and Plus Jakarta Sans (Sans-serif body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Background Spark Decorative Blobs -->
+    <div class="bg-glow" aria-hidden="true">
+        <div class="glow-orb orb-teal"></div>
+        <div class="glow-orb orb-purple"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#" class="header-logo">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17.5V13.5H9V12H11V9H8.5V7.5H15.5V9H13V12H15V13.5H13V17.5H11Z"/>
+                </svg>
+                <span>Tesla Legacy</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#biography">Biography</a>
+                <a href="#timeline">Timeline</a>
+                <a href="#achievements">Inventions</a>
+                <a href="#quotes">Quotes</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="hero-content fade-in">
+            <span class="hero-tag animate-glow">Electrical Pioneer</span>
+            <h1 class="hero-title">Nikola Tesla</h1>
+            <p class="hero-subtitle">The Man Who Invented the Twentieth Century</p>
+            <div class="hero-scroll-prompt">
+                <span>Scroll to explore</span>
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" class="scroll-arrow">
+                    <path d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z"/>
+                </svg>
+            </div>
+        </div>
+        <div class="hero-image-wrapper fade-in delay-2">
+            <div class="image-border-glow">
+                <img src="assets/tesla.png" alt="Artistic vintage portrait of Nikola Tesla surrounded by soft electrical discharge currents" class="hero-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Biography Section (Multiple Paragraphs) -->
+    <section class="bio-section scroll-reveal" id="biography">
+        <div class="container">
+            <h2 class="section-title">The Spark of Genius</h2>
+            <div class="bio-grid">
+                <div class="bio-text">
+                    <p class="lead-para">
+                        Born on July 10, 1856, in the village of Smiljan (modern-day Croatia) during a midnight lightning storm, Nikola Tesla's life seemed destined to be defined by electricity. From an early age, he exhibited a brilliant mind, possessing an eidetic memory and a remarkable ability to visualize complex inventions in three dimensions without drafts. He studied engineering and physics at the Austrian Polytechnic in Graz, where his obsession with alternating current (AC) technology was ignited.
+                    </p>
+                    <p>
+                        In 1884, Tesla immigrated to the United States, arriving in New York City with four cents in his pocket and a letter of recommendation to Thomas Edison. Working under Edison, Tesla proposed designs to improve the efficiency of DC generators. However, professional differences and a famous dispute over unpaid bonuses led Tesla to resign. He spent a difficult period working as a ditch digger before attracting investors who recognized the potential of his alternating current systems.
+                    </p>
+                    <p>
+                        The turning point arrived in 1888 when industrialist George Westinghouse licensed Tesla’s patents for the AC induction motor and transformers. This partnership sparked the famous "War of the Currents" against Edison's direct current system. Tesla’s technology triumphed, lighting the 1893 World's Columbian Exposition in Chicago and proving the safety of AC. Soon after, Tesla designed the machinery at Niagara Falls, establishing the world's first large-scale hydroelectric power station.
+                    </p>
+                    <p>
+                        Tesla spent his later decades pushing the boundaries of technology, inventing the Tesla Coil, investigating X-rays, and demonstrating wireless remote control (teleautomaton). His ultimate project was the Wardenclyffe Tower, designed to transmit free wireless electricity and communications globally. Though financial constraints halted his dreams and he passed away in obscurity in 1943, his designs laid the foundation for the modern electrical grid, remote control, and wireless technologies we use today.
+                    </p>
+                </div>
+                <div class="bio-aside">
+                    <div class="fact-card">
+                        <h3>Quick Profile</h3>
+                        <ul class="fact-list">
+                            <li><strong>Born:</strong> July 10, 1856</li>
+                            <li><strong>Died:</strong> January 7, 1943 (Age 86)</li>
+                            <li><strong>Citizenship:</strong> Austrian / American</li>
+                            <li><strong>Known for:</strong> AC induction motor, Tesla Coil, Radio, Remote Control</li>
+                            <li><strong>Vision:</strong> Global free wireless energy distribution</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section scroll-reveal" id="timeline">
+        <div class="container">
+            <h2 class="section-title text-center">Journey Through Time</h2>
+            <div class="timeline-container">
+                <!-- Line background -->
+                <div class="timeline-line"></div>
+
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item timeline-left scroll-reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">1856</span>
+                        <h3>Birth in a Storm</h3>
+                        <p>Nikola Tesla is born in Smiljan, Austrian Empire, during an intense summer lightning storm. His mother remarks he will be a child of light.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item timeline-right scroll-reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">1884</span>
+                        <h3>Arrival in America</h3>
+                        <p>Immigrates to the U.S. and joins Thomas Edison's Edison Machine Works. Disagreements over engineering methodology and direct vs alternating current quickly strain relations.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item timeline-left scroll-reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">1888</span>
+                        <h3>The Westinghouse Alliance</h3>
+                        <p>Patents the AC polyphase induction motor. George Westinghouse buys the patent licensing rights, initiating the epic War of the Currents against Edison.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item timeline-right scroll-reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">1893</span>
+                        <h3>Lighting the World</h3>
+                        <p>Lit up the World's Columbian Exposition in Chicago using alternating current, demonstrating to millions the safety, efficiency, and scale of the AC system.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 5 -->
+                <div class="timeline-item timeline-left scroll-reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">1896</span>
+                        <h3>Niagara Hydroelectric Power</h3>
+                        <p>Builds the first major hydroelectric generator at Niagara Falls, successfully transmitting clean electricity over 20 miles to Buffalo, NY.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 6 -->
+                <div class="timeline-item timeline-right scroll-reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">1901</span>
+                        <h3>The Wardenclyffe Dream</h3>
+                        <p>Begins construction of the Wardenclyffe Tower on Long Island, intending to build a global wireless communications and energy grid system.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 7 -->
+                <div class="timeline-item timeline-left scroll-reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">1943</span>
+                        <h3>Legacy Solidified</h3>
+                        <p>Tesla passes away in his room at the New Yorker Hotel. Later that year, the U.S. Supreme Court invalidates Marconi's patents, recognizing Tesla's prior art in radio invention.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Grid Section -->
+    <section class="achievements-section scroll-reveal" id="achievements">
+        <div class="container">
+            <h2 class="section-title">Pioneering Achievements</h2>
+            <p class="section-desc text-center">Explorations into the inventions that shaped our modern electrical reality.</p>
+            
+            <div class="achievements-grid">
+                <!-- Card 1 -->
+                <div class="achievement-card scroll-reveal">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                            <path d="M7,2H17A2,2 0 0,1 19,4V20A2,2 0 0,1 17,22H7A2,2 0 0,1 5,20V4A2,2 0 0,1 7,2M7,4V8H17V4H7M7,10V14H17V10H7M7,16V20H17V16H7Z"/>
+                        </svg>
+                    </div>
+                    <h3>Alternating Current (AC)</h3>
+                    <p>Designed the complete polyphase alternating current power system including generators, transformers, and lines that power global grids today.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="achievement-card scroll-reveal">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z"/>
+                        </svg>
+                    </div>
+                    <h3>Induction Motor</h3>
+                    <p>Invented the brushless AC induction motor, converting electricity into mechanical force without failure-prone carbon brushes, driving industrial automation.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="achievement-card scroll-reveal">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                            <path d="M12,3L2,12H5V20H19V12H22L12,3M12,7.7C13.5,7.7 14.8,9 14.8,10.5C14.8,11.3 14.4,12 13.8,12.5L15.3,16H8.7L10.2,12.5C9.6,12 9.2,11.3 9.2,10.5C9.2,9 10.5,7.7 12,7.7Z"/>
+                        </svg>
+                    </div>
+                    <h3>Tesla Coil</h3>
+                    <p>A resonant electrical transformer circuit capable of producing ultra-high voltage and frequency. Crucial to early radio technology and plasma experiments.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="achievement-card scroll-reveal">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                            <path d="M20,6A2,2 0 0,1 22,8V16A2,2 0 0,1 20,18H4A2,2 0 0,1 2,16V8A2,2 0 0,1 4,6H20M20,8H4V16H20V8M9,10A2,2 0 0,1 11,12A2,2 0 0,1 9,14A2,2 0 0,1 7,12A2,2 0 0,1 9,10M15,10H17V12H15V10M15,12.5H17V14.5H15V12.5Z"/>
+                        </svg>
+                    </div>
+                    <h3>Teleautomaton (Robotics)</h3>
+                    <p>Demonstrated the first radio-controlled miniature iron boat at Madison Square Garden in 1898, laying foundations for modern remote controls, guided tech, and robotics.</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="achievement-card scroll-reveal">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                            <path d="M12,2A3,3 0 0,0 9,5V12.08C7.22,12.57 6,14.16 6,16A6,6 0 0,0 12,22A6,6 0 0,0 18,16C18,14.16 16.78,12.57 15,12.08V5A3,3 0 0,0 12,2M12,4A1,1 0 0,1 13,5V6H11V5A1,1 0 0,1 12,4M11,8H13V11H11V8M12,14A2,2 0 0,1 14,16A2,2 0 0,1 12,18A2,2 0 0,1 10,16A2,2 0 0,1 12,14Z"/>
+                        </svg>
+                    </div>
+                    <h3>Radio Waves</h3>
+                    <p>Patented basic transmitters and receivers prior to Marconi. Historically verified as the original designer of radio circuit communication technology.</p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="achievement-card scroll-reveal">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                            <path d="M12,20A6,6 0 0,1 6,14C6,10 12,3.25 12,3.25C12,3.25 18,10 18,14A6,6 0 0,1 12,20M12,5.5C12,5.5 8.5,10.2 8.5,14A3.5,3.5 0 0,0 12,17.5A3.5,3.5 0 0,0 15.5,14C15.5,10.2 12,5.5 12,5.5Z"/>
+                        </svg>
+                    </div>
+                    <h3>Niagara Hydro Plant</h3>
+                    <p>Designed the generators at Adams Power Station, successfully proving that large-scale clean energy could be harvested and transmitted across great distances.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Famous Quote Section -->
+    <section class="quote-section" id="quotes">
+        <div class="quote-container container">
+            <svg class="quote-mark" viewBox="0 0 24 24" width="60" height="60" fill="currentColor">
+                <path d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8"/>
+            </svg>
+            <blockquote class="quotes-slider">
+                <p id="quote-text">"If you want to find the secrets of the universe, think in terms of energy, frequency and vibration."</p>
+                <cite id="quote-author">&mdash; Nikola Tesla</cite>
+            </blockquote>
+            <div class="quote-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="tribute-footer">
+        <div class="footer-container container">
+            <p>&ldquo;The progressive development of man is vitally dependent on invention.&rdquo;</p>
+            <div class="footer-links">
+                <a href="#hero">Back to Top</a>
+                <span>&bull;</span>
+                <a href="https://en.wikipedia.org/wiki/Nikola_Tesla" target="_blank" rel="noopener noreferrer">Learn More</a>
+            </div>
+            <p class="copyright">Oasis Infobyte Internship Project &bull; Created by Ziad Ibrahim &bull; 2026</p>
+        </div>
+    </footer>
+
+    <!-- Scroll & Quote Slider Script -->
+    <script>
+        // Quotes array
+        const quotes = [
+            {
+                text: "If you want to find the secrets of the universe, think in terms of energy, frequency and vibration.",
+                author: "Nikola Tesla"
+            },
+            {
+                text: "The present is theirs; the future, for which I really worked, is mine.",
+                author: "Nikola Tesla"
+            },
+            {
+                text: "Our virtues and our failings are inseparable, like force and matter. When they separate, man is no more.",
+                author: "Nikola Tesla"
+            }
+        ];
+
+        let currentQuoteIndex = 0;
+        const quoteTextEl = document.getElementById('quote-text');
+        const quoteAuthorEl = document.getElementById('quote-author');
+        const dots = document.querySelectorAll('.quote-dots .dot');
+
+        function switchQuote(index) {
+            quoteTextEl.style.opacity = 0;
+            quoteAuthorEl.style.opacity = 0;
+            
+            setTimeout(() => {
+                quoteTextEl.textContent = `"${quotes[index].text}"`;
+                quoteAuthorEl.textContent = `\u2014 ${quotes[index].author}`;
+                quoteTextEl.style.opacity = 1;
+                quoteAuthorEl.style.opacity = 1;
+                
+                dots.forEach((dot, idx) => {
+                    dot.classList.toggle('active', idx === index);
+                });
+                currentQuoteIndex = index;
+            }, 300);
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                switchQuote(index);
+            });
+        });
+
+        // Auto transition quotes
+        setInterval(() => {
+            let nextIndex = (currentQuoteIndex + 1) % quotes.length;
+            switchQuote(nextIndex);
+        }, 8000);
+
+        // Native CSS Scroll Reveal using IntersectionObserver
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+        
+        const observerOptions = {
+            root: null,
+            threshold: 0.12,
+            rootMargin: "0px 0px -40px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    // Stop observing once revealed to maintain simple performance
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        revealElements.forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

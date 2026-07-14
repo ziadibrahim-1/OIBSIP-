@@ -1,0 +1,801 @@
+/* ==========================================================================
+   Tribute Page Design Stylesheet - Nikola Tesla
+   Oasis Infobyte Internship Project
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design Variables & Global Setup
+   -------------------------------------------------------------------------- */
+:root {
+    /* Fonts */
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+    /* Dark Theme Palette */
+    --color-bg-deep: #07080b;       /* Pure dark space */
+    --color-bg-card: #11141e;       /* Card / section gray-blue */
+    --color-bg-lighter: #181c2b;    /* Highlight slate */
+    
+    --color-electric-cyan: #00e5ff;  /* Spark color */
+    --color-neon-purple: #9c27b0;    /* High-frequency arc */
+    --color-accent-teal: #14b8a6;    /* Muted electrical hue */
+    
+    --color-text-primary: #f1f5f9;  /* Soft white */
+    --color-text-secondary: #94a3b8;/* Cool slate */
+    --color-text-muted: #64748b;    /* Muted gray */
+
+    --border-glass: rgba(255, 255, 255, 0.05);
+    --border-active: rgba(0, 229, 255, 0.3);
+    
+    /* Layout Constants */
+    --container-width: 1140px;
+    --section-padding: 100px;
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset & Basics
+   -------------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--color-bg-deep);
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-deep);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Typography elements */
+h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+}
+
+p {
+    font-size: 16px;
+    color: var(--color-text-secondary);
+}
+
+a {
+    color: var(--color-electric-cyan);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #fff;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Section Title Utility */
+.section-title {
+    font-size: 36px;
+    margin-bottom: 24px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-electric-cyan), var(--color-neon-purple));
+    border-radius: 2px;
+}
+
+.section-title.text-center::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-desc {
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+    font-size: 16px;
+    color: var(--color-text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   3. Background Decorative Effects
+   -------------------------------------------------------------------------- */
+.bg-glow {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(140px);
+    opacity: 0.15;
+    animation: floatOrb 25s infinite alternate ease-in-out;
+}
+
+.orb-teal {
+    width: 500px;
+    height: 500px;
+    background-color: var(--color-electric-cyan);
+    top: 10%;
+    right: -10%;
+}
+
+.orb-purple {
+    width: 600px;
+    height: 600px;
+    background-color: var(--color-neon-purple);
+    top: 45%;
+    left: -15%;
+    animation-delay: -8s;
+}
+
+@keyframes floatOrb {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-50px, 80px) scale(1.1); }
+}
+
+/* --------------------------------------------------------------------------
+   4. Sticky Transparent Navigation
+   -------------------------------------------------------------------------- */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(7, 8, 11, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border-glass);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.header-logo svg {
+    color: var(--color-electric-cyan);
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--color-electric-cyan);
+}
+
+/* Hide navigation links on small screens */
+@media (max-width: 600px) {
+    .nav-links {
+        display: none;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   5. Hero Section (Header)
+   -------------------------------------------------------------------------- */
+.hero-section {
+    min-height: 100vh;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    z-index: 10;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-tag {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-electric-cyan);
+    background: rgba(0, 229, 255, 0.08);
+    border: 1px solid var(--border-active);
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-size: clamp(48px, 8vw, 76px);
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    font-weight: 700;
+    background: linear-gradient(180deg, #ffffff 0%, #a5b4fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: clamp(16px, 4vw, 20px);
+    color: var(--color-text-secondary);
+    max-width: 480px;
+    margin-bottom: 40px;
+}
+
+.hero-scroll-prompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-text-muted);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.scroll-arrow {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-8px); }
+    60% { transform: translateY(-4px); }
+}
+
+.hero-image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 420px;
+}
+
+.image-border-glow {
+    position: relative;
+    border-radius: 24px;
+    padding: 6px;
+    background: linear-gradient(135deg, var(--color-electric-cyan) 0%, var(--color-neon-purple) 100%);
+    box-shadow: 0 10px 40px rgba(0, 229, 255, 0.2);
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 18px;
+    display: block;
+    mix-blend-mode: normal;
+}
+
+/* Medium & Desktop layout for Hero */
+@media (min-width: 768px) {
+    .hero-section {
+        flex-direction: row;
+        padding-top: 70px;
+        gap: 60px;
+    }
+
+    .hero-content {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .hero-subtitle {
+        margin-bottom: 50px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   6. Biography Section
+   -------------------------------------------------------------------------- */
+.bio-section {
+    padding: var(--section-padding) 0;
+    background-color: var(--color-bg-card);
+    position: relative;
+    z-index: 10;
+    border-top: 1px solid var(--border-glass);
+    border-bottom: 1px solid var(--border-glass);
+}
+
+.bio-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.bio-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lead-para {
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.bio-aside {
+    display: flex;
+    align-items: flex-start;
+}
+
+.fact-card {
+    background: var(--color-bg-lighter);
+    border: 1px solid var(--border-glass);
+    border-radius: 16px;
+    padding: 30px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.fact-card h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-glass);
+    color: var(--color-electric-cyan);
+}
+
+.fact-list {
+    list-style: none;
+}
+
+.fact-list li {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.fact-list li strong {
+    color: #fff;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+/* Desktop layout for Biography */
+@media (min-width: 992px) {
+    .bio-grid {
+        grid-template-columns: 2fr 1fr;
+        gap: 60px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   7. Timeline Section
+   -------------------------------------------------------------------------- */
+.timeline-section {
+    padding: var(--section-padding) 0;
+    position: relative;
+    z-index: 10;
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 800px;
+    margin: 60px auto 0 auto;
+}
+
+/* Timeline Vertical Line */
+.timeline-line {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(180deg, var(--color-electric-cyan) 0%, var(--color-neon-purple) 100%);
+    opacity: 0.3;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 50px;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 14px;
+    top: 10px;
+    width: 14px;
+    height: 14px;
+    background-color: var(--color-bg-deep);
+    border: 3px solid var(--color-electric-cyan);
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 0 10px var(--color-electric-cyan);
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-marker {
+    background-color: var(--color-electric-cyan);
+    transform: scale(1.3);
+}
+
+.timeline-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--border-glass);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timeline-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-active);
+}
+
+.timeline-year {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-electric-cyan);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.timeline-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.timeline-card p {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+}
+
+/* Alternating layout on tablet & desktop */
+@media (min-width: 768px) {
+    .timeline-line {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .timeline-item {
+        width: 50%;
+        padding-left: 0;
+        margin-bottom: 60px;
+    }
+
+    /* Left Side Items */
+    .timeline-left {
+        left: 0;
+        padding-right: 45px;
+        text-align: right;
+    }
+
+    .timeline-left .timeline-marker {
+        left: auto;
+        right: -7px;
+    }
+
+    /* Right Side Items */
+    .timeline-right {
+        left: 50%;
+        padding-left: 45px;
+    }
+
+    .timeline-right .timeline-marker {
+        left: -7px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   8. Achievements Section (Cards Grid)
+   -------------------------------------------------------------------------- */
+.achievements-section {
+    padding: var(--section-padding) 0;
+    background-color: var(--color-bg-card);
+    position: relative;
+    z-index: 10;
+    border-top: 1px solid var(--border-glass);
+    border-bottom: 1px solid var(--border-glass);
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.achievement-card {
+    background: var(--color-bg-lighter);
+    border: 1px solid var(--border-glass);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.achievement-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-electric-cyan);
+    box-shadow: 0 12px 40px rgba(0, 229, 255, 0.1);
+}
+
+.card-icon {
+    color: var(--color-electric-cyan);
+    background: rgba(0, 229, 255, 0.05);
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.achievement-card:hover .card-icon {
+    background: var(--color-electric-cyan);
+    color: var(--color-bg-deep);
+    transform: scale(1.05);
+}
+
+.achievement-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.achievement-card p {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   9. Famous Quote Section
+   -------------------------------------------------------------------------- */
+.quote-section {
+    padding: 120px 0;
+    background: radial-gradient(circle at center, #181d31 0%, var(--color-bg-deep) 100%);
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.quote-container {
+    text-align: center;
+    max-width: 750px;
+    position: relative;
+}
+
+.quote-mark {
+    color: var(--color-electric-cyan);
+    opacity: 0.12;
+    margin-bottom: 20px;
+}
+
+.quotes-slider {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.quotes-slider p {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 5vw, 28px);
+    line-height: 1.4;
+    color: #fff;
+    font-style: italic;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.quotes-slider cite {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--color-electric-cyan);
+    font-style: normal;
+    display: block;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.quote-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.quote-dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quote-dots .dot.active {
+    background-color: var(--color-electric-cyan);
+    transform: scale(1.2);
+    box-shadow: 0 0 8px var(--color-electric-cyan);
+}
+
+/* --------------------------------------------------------------------------
+   10. Footer Section
+   -------------------------------------------------------------------------- */
+.tribute-footer {
+    background-color: #040508;
+    padding: 60px 0;
+    text-align: center;
+    border-top: 1px solid var(--border-glass);
+    position: relative;
+    z-index: 10;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-container p:first-child {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-style: italic;
+    color: var(--color-text-secondary);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-links a {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-muted);
+}
+
+.footer-links a:hover {
+    color: var(--color-electric-cyan);
+}
+
+.footer-links span {
+    color: var(--color-text-muted);
+    font-size: 10px;
+}
+
+.tribute-footer .copyright {
+    font-size: 12px;
+    color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   11. Scroll-Activated Animations (IntersectionObserver hooks)
+   -------------------------------------------------------------------------- */
+/* Entrance anims for hero on load */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: simpleFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-2 {
+    animation-delay: 0.3s;
+}
+
+@keyframes simpleFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll reveal classes */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Alternate entry movements on desktop timeline */
+@media (min-width: 768px) {
+    .timeline-left.scroll-reveal {
+        transform: translateX(-40px);
+        opacity: 0;
+    }
+    .timeline-right.scroll-reveal {
+        transform: translateX(40px);
+        opacity: 0;
+    }
+    .timeline-left.scroll-reveal.revealed {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    .timeline-right.scroll-reveal.revealed {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
